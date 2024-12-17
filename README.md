@@ -7,17 +7,17 @@
 ---
 
 ## **Contexto**  
-Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal \( (\mu \text{ e } \sigma^2) \), com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
+Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal (μ e σ²) , com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
 
 ---
 
 ## **Definições**  
-- **\(\μ\):** Representa a média da distribuição, indicando o valor central. Alterações em \(\mu\) deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
-- **\(\sigma^2\):** Representa a variância, que descreve a dispersão dos dados em torno da média. Aumentos em \(\sigma^2\) tornam a curva mais achatada e ampla; reduções tornam a curva mais estreita e alta.
+- **μ:** Representa a média da distribuição, indicando o valor central. Alterações em \(\mu\) deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
+- **σ²:** Representa a variância, que descreve a dispersão dos dados em torno da média. Aumentos em \(\sigma^2\) tornam a curva mais achatada e ampla; reduções tornam a curva mais estreita e alta.
 
 As estimativas foram obtidas ao minimizar:
-- Para \(\mu\): A soma dos desvios dos dados em relação à média.  
-- Para \(\sigma^2\): A soma dos desvios quadráticos dos dados em relação à média.
+- Para (μ): A soma dos desvios dos dados em relação à média.  
+- Para (σ²): A soma dos desvios quadráticos dos dados em relação à média.
 
 ---
 
@@ -28,7 +28,7 @@ A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utiliza
 
 ## **Questões**
 
-### **1) Estimar \(\mu\) com Newton-Raphson e comparar com o EMV da média amostral (\(\bar{x}\))**
+### **1) Estimar (μ) com Newton-Raphson e comparar com o EMV da média amostral (x̄)**
 
 **Código em Python:**
 
@@ -70,7 +70,7 @@ def newton_raphson_mean(x, u0, tol=1e-7, max_iter=100):
 
     return None, estimativas  # Não convergiu
 
-# Dados fornecidos
+# Dados fornecidos da variável 2
 dados = np.array([199, 267, 272, 166, 239, 189, 238, 223, 279, 190, 240, 209, 210, 171, 255, 232, 147, 268,
                   231, 199, 255, 199, 228, 240, 184, 192, 211, 201, 203, 243, 181, 382, 186, 198, 165, 219,
                   196, 239, 259, 162, 178, 246, 176, 157, 179, 231, 183, 213, 230, 134, 181, 234, 161, 289,
@@ -82,5 +82,6 @@ u0 = 1  # Chute inicial
 emv = np.mean(dados)  # Média amostral (EMV)
 estimativa, _ = newton_raphson_mean(dados, u0)
 
+# Resutado das estimativas:
 print(f"Newton-Raphson: μ = {estimativa:.2f}")
 print(f"EMV: μ = {emv:.2f}")
