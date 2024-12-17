@@ -7,7 +7,7 @@
 ---
 
 ## **Contexto**  
-    Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal (μ e σ²) , com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
+Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal (μ e σ²) , com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
 
 ---
 
@@ -22,7 +22,7 @@ As estimativas foram obtidas ao minimizar:
 ---
 
 ## **Linguagem Utilizada**  
-    A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utilizada para realizar cálculos matemáticos e manipular os dados. O conjunto de dados analisado corresponde à coluna **Variável 2**.
+A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utilizada para realizar cálculos matemáticos e manipular os dados. O conjunto de dados analisado corresponde à coluna **Variável 2**.
 
 ---
 
@@ -170,4 +170,4 @@ Estimativa de σ² pela fórmula EMV: 1494.88
 
 ## *Conclusão*
 
-    O método de Newton-Raphson utilizado nas duas questões provou eficácia na obtenção dos resultados. Nos dois casos analisados (μ e σ²), os valores convergiram rapidamente para os obtidos pelo EMV, confirmando a precisão de uma estimativa próxima do esperado. A ferramenta numpy foi essencial na aplicação das fórmulas descritas e nos indícios de parâmetros, portanto concluindo o processo do algoritmo.
+O método de Newton-Raphson utilizado nas duas questões provou eficácia na obtenção dos resultados. Nos dois casos analisados (μ e σ²), os valores convergiram rapidamente para os obtidos pelo EMV, confirmando a precisão de uma estimativa próxima do esperado. A ferramenta numpy foi essencial na aplicação das fórmulas descritas e nos indícios de parâmetros, portanto concluindo o processo do algoritmo.
