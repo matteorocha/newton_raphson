@@ -12,7 +12,7 @@ Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar 
 ---
 
 ## **Definições**  
-- **\(\mu\):** Representa a média da distribuição, indicando o valor central. Alterações em \(\mu\) deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
+- **\(\μ\):** Representa a média da distribuição, indicando o valor central. Alterações em \(\mu\) deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
 - **\(\sigma^2\):** Representa a variância, que descreve a dispersão dos dados em torno da média. Aumentos em \(\sigma^2\) tornam a curva mais achatada e ampla; reduções tornam a curva mais estreita e alta.
 
 As estimativas foram obtidas ao minimizar:
