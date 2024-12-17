@@ -28,7 +28,7 @@ A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utiliza
 
 ## **Questões**
 
-### **1) Estimar (μ) com Newton-Raphson e comparar com o EMV da média amostral (x̄)**
+### **Usar algoritmo de Newton-Raphson para estimar média (μ) e comparar a estimativa com o EMV da média amostral (x̄).**
 
 **Código em Python:**
 
@@ -83,5 +83,78 @@ emv = np.mean(dados)  # Média amostral (EMV)
 estimativa, _ = newton_raphson_mean(dados, u0)
 
 # Resutado das estimativas:
-print(f"Newton-Raphson: μ = {estimativa:.2f}")
-print(f"EMV: μ = {emv:.2f}")
+print(f"Estimativa μ para Newton-Raphson = {estimativa:.2f}")
+print(f"Estimativa μ para o EMV = {emv:.2f}")
+
+````
+## *Resultado*
+
+Estimativa de 𝜇 para Newton-Raphson = 216.96.
+Estimativa de 𝜇 para o (EMV): 216.96.
+
+---
+
+### **2) Usar algoritmo de Newton-Raphson para estimar σ² (variância real) e comparar com a estimativa EMV ô² (variância populacional estimada).**
+
+**Código em Python:**
+
+```python
+import numpy as np
+
+def newton_raphson_variance(x, sigma2_0, tol=1e-7, max_iter=100):
+    """
+    Estima a variância populacional (σ²) usando o método de Newton-Raphson.
+
+    Parâmetros:
+        x (array-like): Dados amostrais.
+        sigma2_0 (float): Chute inicial para a variância.
+        tol (float): Tolerância para critério de parada. Padrão: 1e-7.
+        max_iter (int): Número máximo de iterações. Padrão: 100.
+
+    Retorna:
+        σ² (float): Estimativa da variância populacional.
+        estimativas (list): Histórico das estimativas ao longo das iterações.
+    """
+    n, mean_x = len(x), np.mean(x)
+    S = np.sum((x - mean_x)**2)
+    sigma2_k = sigma2_0
+    estimativas = [sigma2_0]
+
+    for i in range(max_iter):
+        h_sigma2 = -n / (2 * sigma2_k) + S / (2 * sigma2_k**2)
+        h_prime_sigma2 = n / (2 * sigma2_k**2) - S / (sigma2_k**3)
+
+        if h_prime_sigma2 == 0:
+            return None, estimativas
+
+        sigma2_next = sigma2_k - h_sigma2 / h_prime_sigma2
+        estimativas.append(sigma2_next)
+
+        if abs(sigma2_next - sigma2_k) < tol:
+            return sigma2_next, estimativas
+
+        sigma2_k = sigma2_next
+
+    return None, estimativas
+
+# Dados fornecidos
+dados = np.array([199, 267, 272, 166, 239, 189, 238, 223, 279, 190, 240, 209, 210, 171, 255, 232, 147, 268,
+                  231, 199, 255, 199, 228, 240, 184, 192, 211, 201, 203, 243, 181, 382, 186, 198, 165, 219,
+                  196, 239, 259, 162, 178, 246, 176, 157, 179, 231, 183, 213, 230, 134, 181, 234, 161, 289,
+                  186, 298, 211, 189, 164, 219, 287, 179, 216, 224, 212, 230, 231, 185, 180, 205, 219, 286,
+                  261, 221, 194, 248, 216, 195, 217, 186, 218, 173, 221, 206, 215, 176, 240, 234, 190, 204,
+                  256, 296, 223, 225, 217, 251, 187, 290, 238, 218])
+
+sigma2_0 = 1  # Chute inicial
+emv_sigma2 = np.var(dados, ddof=0)  # Variância não corrigida
+estimativa_sigma2, _ = newton_raphson_variance(dados, sigma2_0)
+
+print(f"Newton-Raphson: σ² = {estimativa_sigma2:.2f}")
+print(f"EMV: σ² = {emv_sigma2:.2f}")
+
+````
+
+## *Resultado*
+
+Estimativa de 𝜇 para Newton-Raphson = 216.96.
+Estimativa de 𝜇 para o (EMV): 216.96.
