@@ -7,22 +7,22 @@
 ---
 
 ## **Contexto**  
-Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal (μ e σ²) , com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
+    Neste trabalho, explorou-se o uso do método de **Newton-Raphson** para estimar os parâmetros de uma distribuição normal (μ e σ²) , com base em um conjunto de dados fornecido. Os cálculos obtidos foram comparados às estimativas obtidas pela técnica de **Máxima Verossimilhança (EMV)**.
 
 ---
 
 ## **Definições**  
-- **μ:** Representa a média da distribuição, indicando o valor central. Alterações em \(\mu\) deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
-- **σ²:** Representa a variância, que descreve a dispersão dos dados em torno da média. Aumentos em \(\sigma^2\) tornam a curva mais achatada e ampla; reduções tornam a curva mais estreita e alta.
+- **μ:** Representa a média da distribuição, indicando o valor central. Alterações em *x̄* deslocam a distribuição ao longo do eixo horizontal sem modificar sua forma.  
+- **σ²:** Representa a variância, que descreve a dispersão dos dados em torno da média. Aumentos em *ô²* tornam a curva mais achatada e ampla; reduções tornam a curva mais estreita e alta.
 
 As estimativas foram obtidas ao minimizar:
-- Para (μ): A soma dos desvios dos dados em relação à média.  
-- Para (σ²): A soma dos desvios quadráticos dos dados em relação à média.
+- Para *μ*: A soma dos desvios dos dados em relação à média.  
+- Para *σ²*: A soma dos desvios quadráticos dos dados em relação à média.
 
 ---
 
 ## **Linguagem Utilizada**  
-A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utilizada para realizar cálculos matemáticos e manipular os dados. O conjunto de dados analisado corresponde à coluna **Variável 2**.
+    A linguagem escolhida foi **Python**, com suporte da biblioteca `numpy`, utilizada para realizar cálculos matemáticos e manipular os dados. O conjunto de dados analisado corresponde à coluna **Variável 2**.
 
 ---
 
@@ -91,8 +91,9 @@ print(f"Estimativa μ para o EMV: {emv:.2f}")
 ````
 ## *Resultado*
 
-Estimativa de 𝜇 para Newton-Raphson: 216.96.
-Estimativa de 𝜇 para o EMV: 216.96.
+Estimativa de 𝜇 para Newton-Raphson: 216.96
+
+Estimativa de 𝜇 para o EMV: 216.96
 
 ---
 
@@ -162,11 +163,11 @@ print(f"Estimativa de σ² pela fórmula EMV: {emv_sigma2:.2f}")
 
 ## *Resultado*
 
-\Estimativa de σ² pelo método de Newton-Raphson: 216.96.\
-\Estimativa de σ² pela fórmula EMV: 216.96.\
+Estimativa de σ² pelo método de Newton-Raphson: 1494.88
+Estimativa de σ² pela fórmula EMV: 1494.88
 
 ---
 
 ## *Conclusão*
 
-O método de Newton-Raphson utilizado nas duas questões provou eficácia na obtenção dos resultados. Nos dois casos analisados (μ e σ²), os valores convergiram rapidamente para os obtidos pelo EMV, confirmando a precisão de uma estimativa próxima do esperado. A ferramenta numpy foi essencial na aplicação das fórmulas descritas e nos indícios de parâmetros, portanto concluindo o processo do algoritmo.
+    O método de Newton-Raphson utilizado nas duas questões provou eficácia na obtenção dos resultados. Nos dois casos analisados (μ e σ²), os valores convergiram rapidamente para os obtidos pelo EMV, confirmando a precisão de uma estimativa próxima do esperado. A ferramenta numpy foi essencial na aplicação das fórmulas descritas e nos indícios de parâmetros, portanto concluindo o processo do algoritmo.
