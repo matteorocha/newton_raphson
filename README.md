@@ -1,5 +1,3 @@
-# newton_raphson
-
 # **Trabalho 2 – Inferência Estatística**  
 **Nome:** Matheus Rocha Canto  
 **Matrícula:** 22250353  
