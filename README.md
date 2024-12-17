@@ -97,7 +97,7 @@ Estimativa de 𝜇 para o EMV: 216.96
 
 ---
 
-### **2) Usar algoritmo de Newton-Raphson para estimar σ² (variância real) e comparar com a estimativa EMV ô² (variância populacional estimada).**
+### **2) Usar algoritmo de Newton-Raphson para estimar σ² (variância real) e comparar com a estimativa EMV ô² (variância estimada).**
 
 **Código em Python:**
 
@@ -164,6 +164,7 @@ print(f"Estimativa de σ² pela fórmula EMV: {emv_sigma2:.2f}")
 ## *Resultado*
 
 Estimativa de σ² pelo método de Newton-Raphson: 1494.88
+
 Estimativa de σ² pela fórmula EMV: 1494.88
 
 ---
